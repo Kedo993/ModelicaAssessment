@@ -4,7 +4,7 @@ model PressureBoundary
     .ModelicaAssessment.Interfaces.Outlet outlet "Outlet port" annotation(Placement(transformation(extent = {{90,-10},{110,10}},origin = {0,0},rotation = 0)));
 
     // Parameters
-    Modelica.Units.SI.Pressure p(nominal = 1e5) = 10e5 "Setpoint for gauge pressure at port";
+    parameter Modelica.Units.SI.Pressure p(nominal = 1e5) = 10e5 "Setpoint for gauge pressure at port";
     Modelica.Units.SI.Temperature T(nominal = 293.15) = 293.15 "Setpoint for temperature at port";
 
 equation
