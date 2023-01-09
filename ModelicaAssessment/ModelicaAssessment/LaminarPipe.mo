@@ -4,7 +4,7 @@ model LaminarPipe
     import Modelica.Constants.pi;
 
     // Template
-    extends .ModelicaAssessment.Templates.SteadyPipe;
+    extends ModelicaAssessment2.Templates.SteadyPipeParameterInputVariants;
 
 equation
     dp = 8*pi*mu*L*w/rho/(A*A) "Hagne-Poiseuille equation for laminar flow";
