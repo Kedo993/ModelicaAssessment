@@ -2,7 +2,7 @@ within ModelicaAssessment.Templates;
 partial model SteadyPipeParameterInputVariants
   "Extension of base class with drop down menu for parametrisation"
     // Template with interfaces and auxiliary variables
-    extends ModelicaAssessment2.Templates.Pipe_ParamVariants;
+    extends ModelicaAssessment.Templates.Pipe_ParamVariants;
 
 equation
     inlet.w + outlet.w = 0 "No mass storage";

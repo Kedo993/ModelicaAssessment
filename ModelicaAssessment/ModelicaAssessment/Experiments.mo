@@ -1,6 +1,8 @@
 within ModelicaAssessment;
 package Experiments
   model PipeInSystem
+    "To test laminar pipe in simple system consisting of two pressure boundaries"
+
     LaminarPipe laminarPipe(L=1, A=5e-4)
       annotation (Placement(transformation(extent={{-28,-24},{12,12}})));
     PressureBoundary pressureBoundary(p=1000000)
@@ -17,7 +19,7 @@ package Experiments
   end PipeInSystem;
 
   model PipeInSystemMflowRate
-    "Variant where mass flow rate it set directly at boundary using input signal"
+    "Variant of PipeInSystem where mass flow rate it set directly at boundary using input signal"
     LaminarPipe laminarPipe(L=1, A=5e-4)
       annotation (Placement(transformation(extent={{-28,-24},{12,12}})));
     MassFlowRateBoundary MflowBoundary
@@ -35,14 +37,14 @@ package Experiments
       annotation (Line(points={{-138,-6},{-28,-6}}, color={0,0,0}));
     connect(laminarPipe.outlet, PressureBoundary1.outlet)
       annotation (Line(points={{12,-6},{82,-6}}, color={0,0,0}));
-    connect(pulse.y, MflowBoundary.w) annotation (Line(points={{-199,-28},{-186,
-            -28},{-186,-26},{-172,-26},{-172,-4.4},{-157.4,-4.4}}, color={0,0,
-            127}));
+    connect(pulse.y, MflowBoundary.w) annotation (Line(points={{-199,-28},{-186,-28},
+            {-186,-26},{-172,-26},{-172,-4.4},{-157.4,-4.4}}, color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
           coordinateSystem(preserveAspectRatio=false)));
   end PipeInSystemMflowRate;
 
   model PipeInSystem_ParamVariants
+    "To test modified version of laminar pipe which includes drop down menu to select parametrisation variant for pipe"
     LaminarPipe_ParamVariants laminarPipe_ParamVariants(L=1, A=5e-4)
       annotation (Placement(transformation(extent={{-28,-24},{12,12}})));
     PressureBoundary pressureBoundary(p=1000000)
